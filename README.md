@@ -9,17 +9,13 @@ To set up and run this project, ensure that you have the following tools install
 
 Node.js (v14.x or higher)
 npm (v6.x or higher) or yarn (v1.x or higher)
-Git
-Project Setup
+
 1. Clone the Repository : https://github.com/Phornhathai/CodeTest.git
 First, clone the repository to your local machine:
 
-git clone 
-cd codetest-frontend
 2. Install Dependencies with command 'npm install'
 Once inside the project folder, install the necessary dependencies:
 
-Running the Project
 3. Start the Development Server with command 'npm run dev'
 To start the application in development mode, run the following command:
 
