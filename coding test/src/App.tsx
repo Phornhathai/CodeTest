@@ -11,6 +11,7 @@ import { Login } from "./components/login/Login";
 import { users } from "./utils/dataLogin";
 import { DashboardLayoutNavigationLinks } from "./components/dashboard/Dashboard";
 import { Home } from "./components/home/Home";
+import { Profile } from "./components/profile/Profile";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -29,20 +30,23 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route
-          path="/home"
+          path="/home/*"
           element={
             isAuthenticated ? (
               <DashboardLayoutNavigationLinks pathname="/home">
-                <Home />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                </Routes>
               </DashboardLayoutNavigationLinks>
             ) : (
               <Navigate to="/login" replace />
             )
           }
         />
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="/profile/:id" element={<Profile />} />
       </Routes>
     </Router>
   );

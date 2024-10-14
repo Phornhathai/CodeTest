@@ -5,41 +5,53 @@ import {
   Typography,
   Avatar,
   Box,
+  IconButton,
   TextField,
 } from "@mui/material";
 import { employeeList } from "../../utils/dataEmployees";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./home.scss";
+import { useNavigate } from "react-router-dom";
 
 export function Home() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
 
+  const handleCardClick = (id: number) => {
+    navigate(`/profile/${id}`);
+  };
 
   const filteredEmployees = employeeList.filter((employee) => {
     const lowerCaseQuery = searchQuery.toLowerCase();
-    return (
-      employee.name.toLowerCase().includes(lowerCaseQuery) ||
-      employee.mobile.includes(lowerCaseQuery)
-    );
+    return employee.name.toLowerCase().includes(lowerCaseQuery);
   });
 
   return (
     <div className="home-container">
-      <div style={{ display: "flex", justifyContent: "flex-start" }}>
+      <div className="search-item">
         <TextField
           label="Search Employees"
           variant="outlined"
-          sx={{ marginBottom: 3, width: "500px", marginTop: "50px" }}
+          fullWidth
+          sx={{ marginBottom: 3, width: "500px", marginTop: "20px" }}
           value={searchQuery}
           onChange={handleSearch}
         />
       </div>
       <div className="profile-items">
         {filteredEmployees.map((employee, index) => (
-          <Card sx={{ borderRadius: 4 }} key={`${employee.mobile} - ${index}`}>
+          <Card
+            sx={{
+              borderRadius: 4,
+            }}
+            key={`${employee.mobile} - ${index}`}
+            onClick={() => handleCardClick(employee.id)}
+          >
             <CardContent>
               <Box
                 sx={{
@@ -59,8 +71,10 @@ export function Home() {
                   src={employee.image}
                   alt={employee.name}
                 />
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
               </Box>
-
               <Typography
                 variant="h6"
                 component="div"
@@ -68,7 +82,6 @@ export function Home() {
               >
                 {employee.name}
               </Typography>
-
               <Typography
                 variant="body2"
                 color="textSecondary"
@@ -76,14 +89,23 @@ export function Home() {
               >
                 {employee.position}
               </Typography>
-
               <Box
                 sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}
               >
-                <Typography variant="body2">📞 {employee.mobile}</Typography>
+                <img
+                  src="./images/mobile_icon.svg"
+                  alt="Phone Icon"
+                  style={{ width: "24px", marginRight: "8px" }}
+                />
+                <Typography variant="body2">{employee.mobile}</Typography>
               </Box>
               <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Typography variant="body2">✉️ {employee.email}</Typography>
+                <img
+                  src="./images/email_icon.svg"
+                  alt="Email Icon"
+                  style={{ width: "24px", marginRight: "8px" }}
+                />
+                <Typography variant="body2">{employee.email}</Typography>
               </Box>
             </CardContent>
           </Card>

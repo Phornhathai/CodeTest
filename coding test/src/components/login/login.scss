@@ -3,7 +3,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #f4f7fb; /* Light blue background */
+  background-color: #f4f7fb; 
   height: 100%;
 }
 
@@ -11,18 +11,18 @@ html {
   display: flex;
   height: 100vh;
 
-  // Left side: Login form section
+
   .login-left {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff; /* White background for form */
+    background-color: #ffffff;
     padding: 50px;
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    margin: 20px; /* Margin for spacing */
+    border-radius: 20px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    margin: 20px; 
 
     .logo {
       width: 80px;
@@ -96,7 +96,7 @@ html {
     }
 
     .MuiButton-root {
-      background-color: #1e3a8a; /* Dark blue */
+      background-color: #1e3a8a; 
       color: #fff;
       font-weight: 500;
       padding: 12px;
@@ -105,7 +105,7 @@ html {
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #162d6d; /* Darker blue on hover */
+        background-color: #162d6d; 
       }
     }
 
@@ -153,10 +153,9 @@ html {
     }
   }
 
-  // Right side: Image/Information section
   .login-right {
     flex: 1;
-    background-color: #162d6d; /* Dark blue */
+    background-color: #162d6d; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,7 +199,7 @@ html {
   }
 }
 
-// Responsive Design
+
 
 @media (max-width: 1024px) {
   .login-container {
@@ -221,7 +220,7 @@ html {
     flex-direction: column;
 
     .login-right {
-      display: none; /* Hide image on smaller screens */
+      display: none; 
     }
 
     .login-left {

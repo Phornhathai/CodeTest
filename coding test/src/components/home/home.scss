@@ -1,24 +1,12 @@
+.search-item {
+  position: fixed;
+  top: 70px;
+  margin-bottom: 100px;
+  width: fit-content;
+}
 .home-container {
+  margin-top: 170px;
   padding-top: 100px;
-  margin: 0px;
-
-  .title {
-    font-size: 20px;
-    font-weight: 700;
-    text-align: left;
-  }
-
-  .sub-title {
-    color: var(--Grey-01, #a5a5a5);
-    font-size: 18px;
-    font-weight: 400;
-    text-align: left;
-  }
-
-  .title,
-  .sub-title {
-    padding: 5px;
-  }
 }
 
 .profile-items {

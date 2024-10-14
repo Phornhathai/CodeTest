@@ -1,9 +1,14 @@
 import * as React from "react";
-import { createTheme } from "@mui/material/styles";
+import {
+  createTheme,
+
+  ThemeProvider,
+} from "@mui/material/styles";
 import DescriptionIcon from "@mui/icons-material/Description";
 import { AppProvider } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import type { Router } from "@toolpad/core";
+import { useMediaQuery } from "@mui/system";
 
 const demoTheme = createTheme({
   cssVariables: {
@@ -14,7 +19,7 @@ const demoTheme = createTheme({
     values: {
       xs: 0,
       sm: 600,
-      md: 600,
+      md: 900,
       lg: 1200,
       xl: 1536,
     },
@@ -23,15 +28,17 @@ const demoTheme = createTheme({
 
 interface DemoProps {
   window?: () => Window;
-  pathname?: string;
   children?: React.ReactNode;
+  pathname?: string;
 }
 
 export function DashboardLayoutNavigationLinks({
   window,
   children,
+  pathname: initialPathname = "/home",
 }: DemoProps) {
-  const [pathname, setPathname] = React.useState("/home");
+  const [pathname, setPathname] = React.useState(initialPathname);
+  const isMobile = useMediaQuery(demoTheme.breakpoints.down("sm"));
 
   const router = React.useMemo<Router>(() => {
     return {
@@ -44,24 +51,27 @@ export function DashboardLayoutNavigationLinks({
   const demoWindow = window !== undefined ? window() : undefined;
 
   return (
-    <AppProvider
-      navigation={[
-        {
-          segment: "home",
-          title: "Home",
-          icon: <DescriptionIcon />,
-        },
-        {
-          segment: "profile",
-          title: "Profile",
-          icon: <DescriptionIcon />,
-        },
-      ]}
-      router={router}
-      theme={demoTheme}
-      window={demoWindow}
-    >
-      <DashboardLayout>{children}</DashboardLayout>
-    </AppProvider>
+    <ThemeProvider theme={demoTheme}>
+      <AppProvider
+        navigation={[
+          {
+            segment: "home",
+            title: "Home",
+            icon: <DescriptionIcon />,
+          },
+        ]}
+        router={router}
+        theme={demoTheme}
+        window={demoWindow}
+      >
+        <DashboardLayout
+          sx={{
+            padding: isMobile ? "16px" : "32px",
+          }}
+        >
+          {children}
+        </DashboardLayout>
+      </AppProvider>
+    </ThemeProvider>
   );
 }
