@@ -1,0 +1,231 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f7fb; /* Light blue background */
+  height: 100%;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+
+  // Left side: Login form section
+  .login-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* White background for form */
+    padding: 50px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px; /* Margin for spacing */
+
+    .logo {
+      width: 80px;
+      margin-bottom: 30px;
+    }
+
+    .login-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .login-description {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .login-with-google {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 12px 20px;
+      font-size: 1rem;
+      color: #666;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #f4f4f4;
+      }
+    }
+
+    .divider {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      &::before,
+      &::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #ccc;
+      }
+
+      &::before {
+        margin-right: 10px;
+      }
+
+      &::after {
+        margin-left: 10px;
+      }
+    }
+
+    .MuiTextField-root {
+      width: 100%;
+      margin-bottom: 15px;
+
+      input {
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+    }
+
+    .MuiButton-root {
+      background-color: #1e3a8a; /* Dark blue */
+      color: #fff;
+      font-weight: 500;
+      padding: 12px;
+      border-radius: 8px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #162d6d; /* Darker blue on hover */
+      }
+    }
+
+    .login-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      color: #666;
+
+      .forgot-password {
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: #333;
+        }
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+
+        input {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .signup-link {
+      margin-top: 20px;
+      font-size: 0.875rem;
+      text-align: center;
+      color: #666;
+
+      a {
+        color: #1e3a8a;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: #162d6d;
+        }
+      }
+    }
+  }
+
+  // Right side: Image/Information section
+  .login-right {
+    flex: 1;
+    background-color: #162d6d; /* Dark blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 20px;
+
+    .image-text {
+      color: #ffffff;
+      font-size: 1.2rem;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .update-description {
+        margin-top: 20px;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      .learn-more-btn {
+        background-color: #ffffff;
+        color: #162d6d;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #f4f4f4;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+
+@media (max-width: 1024px) {
+  .login-container {
+    flex-direction: column;
+
+    .login-right {
+      height: 250px;
+    }
+
+    .login-left {
+      margin: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+
+    .login-right {
+      display: none; /* Hide image on smaller screens */
+    }
+
+    .login-left {
+      padding: 20px;
+    }
+  }
+}
