@@ -1,10 +1,10 @@
-// mockEmployeeData.ts
 export const employeeList = [
     {
       name: "Angela Moss",
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "angelamoss@mail.com",
+      image: "./images/pic_1.svg",
       initials: "AM",
     },
     {
@@ -12,6 +12,7 @@ export const employeeList = [
       position: "Photographer at Audio Video Teams",
       mobile: "+12 345 6789 0",
       email: "ahmadzayn@mail.com",
+      image: "./images/pic_2.svg",
       initials: "AZ",
     },
     {
@@ -19,6 +20,7 @@ export const employeeList = [
       position: "Designer at Crimson Guards Studios",
       mobile: "+12 345 6789 0",
       email: "brianconnor@mail.com",
+      image: "./images/pic_3.svg",
       initials: "BC",
     },
     {
@@ -26,6 +28,7 @@ export const employeeList = [
       position: "Programmer at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "courtneyhawk@mail.com",
+      image: "./images/pic_4.svg",
       initials: "CH",
     },
     {
@@ -33,6 +36,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "angelamoss@mail.com",
+      image: "./images/pic_5.svg",
       initials: "CS",
     },
     {
@@ -40,6 +44,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "davidhere@mail.com",
+      image: "./images/pic_6.svg",
       initials: "DH",
     },
     {
@@ -47,6 +52,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "denniselee@mail.com",
+      image: "./images/pic_7.svg",
       initials: "DL",
     },
     {
@@ -54,6 +60,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "erbatovaxie@mail.com",
+      image: "./images/pic_8.svg",
       initials: "EA",
     },
     {
@@ -61,6 +68,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "angelamoss@mail.com",
+      image: "./images/pic_9.svg",
       initials: "EK",
     },
     {
@@ -68,6 +76,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "fannyhumble@mail.com",
+      image: "./images/pic_10.svg",
       initials: "FH",
     },
     {
@@ -75,6 +84,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "franklinjr@mail.com",
+      image: "./images/pic_11.svg",
       initials: "FJ",
     },
     {
@@ -82,6 +92,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "gandalfhoos@mail.com",
+      image: "./images/pic_12.svg",
       initials: "GH",
     },
     {
@@ -89,6 +100,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "gabriella@mail.com",
+      image: "./images/pic_13.svg",
       initials: "G",
     },
     {
@@ -96,6 +108,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "hannyshella@mail.com",
+      image: "./images/pic_14.svg",
       initials: "HS",
     },
     {
@@ -103,6 +116,7 @@ export const employeeList = [
       position: "Marketing Manager at Highspeed Studios",
       mobile: "+12 345 6789 0",
       email: "ivankov123@mail.com",
+      image: "./images/pic_15.svg",
       initials: "I",
     },
   ];

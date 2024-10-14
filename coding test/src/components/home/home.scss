@@ -1,0 +1,38 @@
+.home-container {
+  padding-top: 100px;
+  margin: 0px;
+
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .sub-title {
+    color: var(--Grey-01, #a5a5a5);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+  }
+
+  .title,
+  .sub-title {
+    padding: 5px;
+  }
+}
+
+.profile-items {
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  gap: 16px;
+}
+
+.profile-items .MuiCard-root {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-items .MuiCard-root:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

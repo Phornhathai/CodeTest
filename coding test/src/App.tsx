@@ -1,6 +1,5 @@
-import { Typography } from "@mui/material";
 import "./App.css";
-import DashboardLayoutNavigationLinks from "./components/dashboard/Dashboard";
+
 import { useState } from "react";
 import {
   BrowserRouter as Router,
@@ -10,6 +9,8 @@ import {
 } from "react-router-dom";
 import { Login } from "./components/login/Login";
 import { users } from "./utils/dataLogin";
+import { DashboardLayoutNavigationLinks } from "./components/dashboard/Dashboard";
+import { Home } from "./components/home/Home";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -34,7 +35,7 @@ function App() {
           element={
             isAuthenticated ? (
               <DashboardLayoutNavigationLinks pathname="/home">
-               
+                <Home />
               </DashboardLayoutNavigationLinks>
             ) : (
               <Navigate to="/login" replace />

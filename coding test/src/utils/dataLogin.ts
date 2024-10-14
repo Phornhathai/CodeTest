@@ -1,4 +1,3 @@
-// dataLogin.ts
 export const users = [
     {
       username: "admin",

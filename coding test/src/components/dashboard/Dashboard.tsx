@@ -27,7 +27,7 @@ interface DemoProps {
   children?: React.ReactNode;
 }
 
-export default function DashboardLayoutNavigationLinks({
+export function DashboardLayoutNavigationLinks({
   window,
   children,
 }: DemoProps) {
@@ -41,11 +41,9 @@ export default function DashboardLayoutNavigationLinks({
     };
   }, [pathname]);
 
-  // Remove this const when copying and pasting into your project.
   const demoWindow = window !== undefined ? window() : undefined;
 
   return (
-    // preview-start
     <AppProvider
       navigation={[
         {
@@ -54,8 +52,8 @@ export default function DashboardLayoutNavigationLinks({
           icon: <DescriptionIcon />,
         },
         {
-          segment: "about",
-          title: "About Us",
+          segment: "profile",
+          title: "Profile",
           icon: <DescriptionIcon />,
         },
       ]}
